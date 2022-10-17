@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tic Tac Toe Game</title>
+        <link rel="stylesheet" href="style.css">        
+    </head>
+    <body> 
+        <div class="settings index">
+            <div class="symbols">
+                <span class="X-color">x</span>
+                <span class="O-color">o</span>
+            </div>
+            <div class="pick-mark bold">
+                <span>pick player 1's mark</span>
+                <div class="marks">
+                    <div class="btn-mark selected">X</div>
+                    <div class="btn-mark">O</div>
+                </div>
+                <span>remember x goes first</span>
+            </div>
+            <div class="start btn-2 bold">new game (versus cpu)</div>
+            <div class="start btn-1 bold">new game (versus player)</div>
+        </div>
+        <div class="msg-container opacity index">
+            <div class="message">                
+                <div class="msg-heading"></div>
+                <div class="msg-content">
+                    <span class=""></span> <span class=""></span>
+                </div>                                    
+                <div class="options">
+                    <div class="btn btn-1"></div>
+                    <div class="btn btn-2"></div>
+                </div>                
+            </div>
+        </div>
+        <div class="game-display">
+            <div class="display-heading">
+                <div class="symbols">
+                    <span class="X-color">x</span>
+                    <span class="O-color">o</span>
+                </div>
+                <div class="btn-turn">
+                    <span class="player-symbol bold"></span> 
+                    <span></span>
+                </div>
+                <div class="btn-restart">
+                    <ion-icon name="refresh-outline"></ion-icon>                    
+                </div>
+            </div>
+            <div class="line">
+                <div class="entry" id="11"></div>
+                <div class="entry" id="12"></div>
+                <div class="entry" id="13"></div>
+            </div>
+            <div class="line">
+                <div class="entry" id="21"></div>
+                <div class="entry" id="22"></div>
+                <div class="entry" id="23"></div>
+            </div>
+            <div class="line">
+                <div class="entry" id="31"></div>
+                <div class="entry" id="32"></div>
+                <div class="entry" id="33"></div>
+            </div>
+            <div class="line">
+                <div class="score">
+                    <span class="small bold"></span>
+                    <span class="big bold"></span>
+                </div>
+                <div class="score ties">
+                    <span class="small bold"> TIES </span>
+                    <span class="big bold"></span>
+                </div>
+                <div class="score">
+                    <span class="small bold"></span>
+                    <span class="big bold"></span>
+                </div>
+            </div>
+        </div>   
+        
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>  
+        <script type="text/javascript" src="app.js"></script>
+    </body>
+</html>

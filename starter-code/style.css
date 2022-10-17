@@ -1,0 +1,391 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600;900&display=swap');
+
+:root {
+    --bg-color-primary: #1f3540;
+    --bg-color-display: #192a32;    
+    --bg-color-X: #31c4be;
+    --bg-color-ties: #a8bec9;
+    --bg-color-O: #f5b036;
+
+    --bx-shadow-color: #0e2028;    
+    --bx-shadow-color-200: #178c87;
+    --bx-shadow-color-300: #647c86;
+    --bx-shadow-color-400: #cb8f21;    
+
+    --fc-primary: #003642;
+    --fc-X: #31c4be;
+    --fc-O: #f5b036;
+    --fc-winner: #9db4be;  
+    --fc-btn-turn: #a5bcc6;       
+
+    --ff: 'Nunito', sans-serif;  
+    --fw-primary: 600;
+    --fw-bold: 900;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {   
+    position: relative;  
+    font-family: var(--ff); 
+    cursor: default;
+}
+
+.opacity {        
+    opacity: 0;    
+}
+
+.index {
+    z-index: -1 !important;    
+}
+
+.bold {
+    font-weight: var(--fw-bold);
+}
+
+.no-pointer-events{
+    pointer-events: none;
+}
+
+.marker {    
+    font-weight: var(--fw-bold);    
+    font-size: 5rem;    
+}
+
+.X-color {
+    color: var(--fc-X);
+}
+
+.O-color {
+    color: var(--fc-O);
+}
+
+.tie-color{
+    color: var(--bg-color-ties);
+    padding: 40px 0;
+}
+
+.btn {
+    padding: 20px 15px;
+    margin: 0 8px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-weight: var(--fw-bold);  
+    cursor: pointer;  
+}
+
+.settings{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;    
+    background-color: var(--bg-color-display);
+    height: 100vh;
+    width: 100vw;    
+}
+
+.pick-mark {
+    background-color: var(--bg-color-primary);
+    padding: 12px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.pick-mark span:first-child {
+    color: var(--bg-color-ties);
+    font-size: 0.8rem; 
+}
+
+.pick-mark span:last-child {
+    color: #a8bec94d;
+    font-size: 0.6rem; 
+}
+
+.marks {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    background-color: var(--bg-color-display);
+    border-radius: 10px;
+}
+
+.btn-mark {
+    padding: 5px 60px;
+    color: var(--bg-color-ties);
+    font-size: 1.3rem;    
+    cursor: pointer;
+}
+
+.selected {
+    background-color: var(--bg-color-ties);
+    color: var(--bg-color-display);
+    border-radius: 10px;
+}
+
+.start {
+    text-transform: uppercase;
+    padding: 10px 0;
+    text-align: center;
+    background-color: var(--bg-color-ties);
+    box-shadow: 0 5px 0 var(--bx-shadow-color-300);
+    border-radius: 10px;
+    margin-top: 20px;
+    font-size: 0.8rem;
+    width: 295.328px;    
+}
+
+.settings .btn-1 {
+    background-color: var(--bg-color-X);
+    box-shadow: 0 5px 0 var(--bx-shadow-color-200);
+}
+
+.msg-container {
+    position: absolute;
+    z-index: 1;        
+    height: 100vh; 
+    display: flex; 
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);  
+    transition: opacity 0.7s cubic-bezier(.73,-0.01,1,-0.15);
+}
+
+.message {  
+    width: 100vw;
+    display: flex; 
+    flex-direction: column;   
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+    text-transform: uppercase;   
+    background-color: var(--bg-color-primary);
+}
+
+.msg-heading {    
+    color: var(--fc-winner);
+    font-size: 0.9rem;
+    text-align: center;    
+}
+
+.msg-content{
+    font-size: 2rem;
+    font-weight: var(--fw-bold);
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
+
+.winner-symbol{
+    font-size: 5rem;   
+    padding-right: 20px;  
+}
+
+.options {
+    display: flex;
+}
+
+.btn-1 {
+    color: var(--fc-primary);
+    background-color: var(--bg-color-ties);
+    box-shadow: 0 4px 0 var(--bx-shadow-color-300);
+}
+
+.btn-2 {
+    color: var(--fc-primary);
+    background-color: var(--bg-color-O);
+    box-shadow: 0 4px 0 var(--bx-shadow-color-400);
+}
+
+.special-styling {
+    color: var(--bg-color-ties);
+    font-size: 2.7rem;
+    padding: 30px 0;
+}
+
+.game-display {
+    height: 100vh;
+    background-color: var(--bg-color-display);         
+    font-weight: var(--fw-primary);
+    color: var(--fc-primary);    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;                
+}
+
+.display-heading {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    width: 370px;    
+    margin-bottom: 10px;    
+}
+
+.symbols {
+    text-transform: uppercase;
+    font-weight: var(--fw-bold);
+    font-size: 2rem;    
+}
+
+.btn-turn {
+    text-transform: uppercase;
+    background-color: var(--bg-color-primary);
+    color: var(--fc-btn-turn);
+    padding: 5px 30px;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0.5px 3px 0 var(--bx-shadow-color);
+    cursor: pointer;
+    max-width: 110px;
+    margin-left: 72.67px;
+    margin-right: 90px;
+}
+
+.btn-restart {
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    padding: 8px;
+    border-radius: 10px;    
+    background-color: var(--bg-color-ties);
+    box-shadow: 0.5px 3px 0 var(--bx-shadow-color-300);
+    cursor: pointer;
+}
+
+.player-symbol{
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+.line {
+    display: flex;       
+}
+
+.entry {
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    height: 105px;
+    width: 110px;
+    border-radius: 10px;
+    background-color: var(--bg-color-primary);
+    margin: 10px;    
+    box-shadow: 0 7px 0 var(--bx-shadow-color); 
+    cursor: pointer;   
+}
+
+.score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    width: 110px;    
+    border-radius: 10px;    
+    margin: 10px;     
+    box-shadow: 0 7px 0 var(--bx-shadow-color);   
+}
+
+.X-bg-color {     
+    background-color: var(--bg-color-X);
+}
+
+.ties {
+    background-color: var(--bg-color-ties);
+}
+
+.O-bg-color {
+    background-color: var(--bg-color-O);
+}
+
+.X-won-event {
+    background-color: var(--bg-color-X);
+    color: var(--bg-color-display);
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    text-align: center;    
+}
+ 
+.O-won-event {
+    background-color: var(--bg-color-O);
+    color: var(--bg-color-display);
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.big {    
+    font-size: 1.9rem;
+    line-height: 1.9rem;
+}
+
+.small {
+    font-size: 12px;
+}
+
+@media ( max-width: 440px ) {
+
+    .entry,
+    .score {
+        width: 90px;
+        margin: 5px;        
+    }
+
+    .entry {
+        height: 85px;
+    }
+
+    .score {
+        height: 50px;        
+    }
+
+    .big {
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+    }
+
+    .display-heading {
+        width: 300px;
+    }
+
+    .symbols {
+        font-size: 1.8rem;
+    }
+
+    .btn-turn {
+        max-width: 90px;
+        margin: 0 69px 0 53.39px;
+    }
+
+    .btn-restart {
+        padding: 6px;
+    }
+
+    .marker {
+        font-size: 4rem;
+    }
+
+    .winner-symbol {
+        font-size: 3rem;
+    }
+
+    .msg-container span:nth-child(2) {
+        font-size: 1.5rem;
+    }
+
+    .btn {
+        padding: 15px 10px;
+    }
+
+}
