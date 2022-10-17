@@ -28,4 +28,4 @@ Your users should be able to:
 ### Links
 
     Solution URL: https://github.com/MUKI1Z/Tic-Tac-Toe-Game.git
-    Live Site URL: 
+    Live Site URL: https://muki1z.github.io/Tic-Tac-Toe-Game/
